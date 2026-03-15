@@ -38,7 +38,7 @@ function calculateStreak(sessions: ReflectionSession[]): number {
     const sessionDate = new Date(completed[i].timestamp)
     sessionDate.setHours(0, 0, 0, 0)
     const diffDays = (lastDate.getTime() - sessionDate.getTime()) / (1000 * 60 * 60 * 24)
-    if (diffDays >= 0 && diffDays <= 1) {
+    if (diffDays > 0 && diffDays <= 1) {
       streak++
       lastDate = sessionDate
     } else {
