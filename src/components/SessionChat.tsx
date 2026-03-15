@@ -108,7 +108,7 @@ export default function SessionChat({ session, onUpdate, onComplete }: SessionCh
           ...updates,
           messages: [...updatedMessages, completionMessage],
           completed: true,
-          summary: `Energy: ${localEnergy}/10 | Dimension: ${session.activeTiltDimension ?? 'Not set'} | Action: ${input.trim()}`,
+          summary: `Energy: ${updates.energyRating ?? session.energyRating}/10 | Dimension: ${session.activeTiltDimension ?? 'Not set'} | Action: ${input.trim()}`,
         })
         setTimeout(onComplete, 2000)
       } else {
